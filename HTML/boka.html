@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boka - Hundpensionatet Tassen</title>
+    <link rel="stylesheet" href="../CSS/boka-style.css">
+    <script src="../JS/boka.js" defer></script>
+</head>
+<body>
+
+    <a href="index.html" class="tillbaka">← Tillbaka till startsidan</a>
+
+    <form id="form">
+
+        <h1>Boka plats för din hund</h1>
+
+         <p>Välkommen till vår bokningssida!</p>
+
+    
+        
+         <label for="id">Hundens ID</label>
+         <input type="text" name="id" id="id" placeholder="Hundens id" required>
+
+        <label for="hund">Hundens namn</label>
+        <input type="text" name="hund" id="hund" placeholder="Hundens namn" required>
+
+        
+
+   
+       
+    
+ 
+
+    
+         <label for="datum">Datum</label>
+         <input type="date" id="datum" name="datum" min="2026-10-26" required>
+
+           
+
+
+
+           <label for="meddelande">Meddelande</label>
+           <textarea  name="meddelande" id="meddelande"  placeholder="Skriv ditt meddelande"></textarea>
+
+
+           <button type="submit" id="min-knapp">Skicka bokningsförfrågan</button>
+           
+    
+
+    
+  
+
+    </form>
+     <ul id="lista">
+
+     </ul>
+   
+</body>
+</html>
