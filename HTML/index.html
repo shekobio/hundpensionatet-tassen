@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hundpensionatet Tassen</title>
     <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../JavaScript/app.js" defer></script>
 </head>
 <body>
       
@@ -101,6 +102,15 @@
 
     </main>
 
+        <section class="visa-vader">
+            <h2>Väder</h2>
+
+            <label for="ort">Ort</label>
+            <input type="text" name="ort" id="ort" placeholder="Ange din ort" required>
+            <button id="vader">Visa vädret</button>
+            <p id="resultat"></p>
+        </section>
+
 
     <main>
         <!-- class="clock-container" -->
@@ -122,10 +132,14 @@
 
             </section>
 
+             <section class="klocka">
+
+             
+
                 <!-- Day Indicator -->
                <div class="day-indicator">
                    <span class="day-dot"></span>
-                   <span id="day">Saturday</span>
+                   <span id="day">Lördag</span>
                </div>
 
                 <!-- Digital Time -->
@@ -138,22 +152,21 @@
                       <span class="separator">:</span>
                       <span id="seconds">45</span>
                     </div>
- 
-                  <!-- AM / PM -->
-                   <span class="ampm" id="ampm">AM</span>
-
+                    
                 </div>
 
                     <!-- Date -->
                    <div class="date-wrapper">
                      <span class="calendar-icon">📅</span>
-                     <span id="date">August 8, 2026</span>
+                     <span id="date">Augusti 8, 2026</span>
                    </div>
 
                    <div class="opening-status">
                      <span id="status-dot"></span>
                      <span id="status-text"></span>
                     </div>
+
+                    </section>
 
         </section>
        
@@ -175,10 +188,10 @@
         <div class="omdomen-grid">
                    
                      
-                <label for="kommentar"></label>
+                <label for="kommentar">Kommentar</label>
                 <textarea name="kommentar" id="kommentar" placeholder="Din kommentar" required ></textarea>
                 
-                <label for="namn"></label>
+                <label for="namn">Namn</label>
                 <input type="text" name="namn" id="namn" placeholder="Ditt namn">
                     
 
@@ -193,6 +206,8 @@
         </div>
 
             <div id="visa-omdomen">
+
+              <button id="lägg-till">lägga till en kommentar</button>
 
               <button id="knapp-omdomen">Visa omdömen</button>
 
