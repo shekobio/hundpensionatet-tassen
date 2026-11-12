@@ -1,5 +1,6 @@
 const hund = document.getElementById("hund");
 const datum = document.getElementById("datum");
+datum.min = new Date().toLocaleDateString("sv-SE");
 const id = document.getElementById("id");
 const form = document.querySelector("#form");
 const meddelande = document.querySelector("#meddelande");
@@ -27,19 +28,27 @@ form.addEventListener("submit", function(event) {
     if (hund.value.trim() !==" " && datum.value !== " " && id.value.trim() !== " ")
     {
           bokning.push(hunden);
-          
-      
-      
+          sparaBokning();
+
+       alert("Din bokningsförfrågan har skickats! 🐾");
+       
     }
 
      
-    sparaBokning();
-    visaBokningar();
+    
+   
+
+    id.value = "";
+    hund.value = "";
+    datum.value = ""; 
+    meddelande.value = ""; 
    
 
     
   
 });
+
+
 
 function sparaBokning(){
         
@@ -47,16 +56,26 @@ function sparaBokning(){
          
 }
 
-function visaBokningar() {
+const visa_bokningar = document.getElementById("visa-knapp");
+
+visa_bokningar.addEventListener("click",  function (event) {
+
+
+  event.preventDefault();
   
   const lista = document.querySelector("#lista");
 
   lista.innerHTML = "";
 
+  if (bokning.length === 0) {
+    lista.textContent = "Inga bokningar finns";
+    return;
+}
+
   bokning.forEach(function(hunden) {
     const li = document.createElement("li");
 
-    li.textContent = hunden.id + " " +  hunden.name + " " + hunden.datum + " "  + hunden.meddelande;
+    li.textContent ="Hundens id: " + hunden.id + " Hundens namn: " +  hunden.name + " Datum: " + hunden.datum + " Meddelande: "  + hunden.meddelande;
 
     
     const knapp = document.createElement("button");
@@ -73,10 +92,13 @@ function visaBokningar() {
   
     li.appendChild(knapp);
     lista.appendChild(li);
-  });
 
-   
-}
+    
+     
+  })
+
+ 
+});
 
 
 function taBortBokningar() {
@@ -87,16 +109,20 @@ function taBortBokningar() {
       const id =(event.target.dataset.id);
 
       bokning = bokning.filter(hunden => hunden.id !== id);
+      
+       sparaBokning();
 
+       event.target.parentElement.remove();
       
 
     }
-    sparaBokning();
-    visaBokningar();
+   
+   
 
   });
   
 }
-   
 
- taBortBokningar();
+ 
+  taBortBokningar(); 
+

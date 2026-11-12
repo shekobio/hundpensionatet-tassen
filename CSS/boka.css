@@ -76,6 +76,12 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+
+   color: #333;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: left;
+
 }
 
 #form h1 {
@@ -96,3 +102,12 @@ body {
 .tillbaka:hover {
     color: #a87550;
 }
+
+#lista {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+
