@@ -185,9 +185,7 @@ if (kundkommentar.length > 1) {
 }
 
 forraIndex = slumptal;
- 
-   
- 
+
   
   for (let i = 0; i < kundkommentar.length ; i++){
      const föreslumptal = slumptal;
@@ -220,36 +218,6 @@ forraIndex = slumptal;
     
   }
 
-
- /*kundkommentar.forEach((comment) => {
-
-    const ruta = document.createElement("div");
-    ruta.classList.add("kommentar-ruta");
-    const p = document.createElement("p");
-   
-
-   p.textContent = "Kommentar: " + comment.kommentar + "\nNamn: " + comment.namn;
-    
-
-    const knapp = document.createElement("button");
-    knapp.textContent = "Ta bort";
-    knapp.classList.add("ta-bort");   
-    knapp.dataset.namn = comment.namn;
-    knapp.style.color = "black";
-    knapp.style.border = "none";
-    knapp.style.borderRadius = "8px";
-    knapp.style.padding = "8px 15px";
-    knapp.style.marginLeft = "15px";
-    knapp.style.backgroundColor = "#feeab4";
-    knapp.style.borderRadius = "8px";
-  
-    p.appendChild(knapp);
-    ruta.appendChild(p);
-    omdomen.appendChild(ruta);
-  
-    
-    
-  })*/
 });
 
 function taBortKommentar() {
@@ -268,6 +236,7 @@ function taBortKommentar() {
      
 
     sparaKommentar();
+    event.target.parentElement.parentElement.remove();
   
 
 
